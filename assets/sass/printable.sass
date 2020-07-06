@@ -1,0 +1,202 @@
+$cairo: 'Cairo', sans-serif
+$tajawal: 'Tajawal', sans-serif
+$green: #b0c154
+$snapchat: #fffc00
+$twitter: #1da1f2
+$instagram: #c13584
+$turkey: #E30A17
+
+//$green: #4EA05B
+$red: #CF2127
+$yellow: #f7c400
+a
+  text-decoration: none
+
+ul
+  margin: 0px
+  padding: 0px
+  list-style: none
+
+p,h2,h1
+  margin: 0px
+
+body, html
+  padding: 0px
+  margin: 0px
+
+*
+  box-sizing: border-box
+  outline: 0
+
+body
+  min-height: 100vh
+  background: linear-gradient(#FFF, #f1f1f1)
+.printable-container
+  max-width: 100%
+  margin: 0px
+  .item
+    border-radius: 20px
+    padding: 20px
+    box-shadow: 5px 5px $yellow
+    font-family: $cairo
+    margin-bottom: 10px
+    &.client-informations
+      ul
+        li
+          display: flex
+          span
+            flex-shrink: 0
+            width: 150px
+          b
+            width: 100%
+    &.package
+      .cost
+        display: block
+        width: max-content
+        margin-left: auto
+        text-align: right
+        ul
+          li
+            display: flex
+            border-bottom: 1px #333 solid
+            span
+              flex-shrink: 0
+              width: 200px
+              color: #555
+              text-align: left
+            b
+              width: 100%
+              color: #333
+            &.total
+              font-size: 25px
+              border-bottom-color: $yellow
+              margin: 20px auto
+              padding: 0px 20px
+      &.toplam
+        box-shadow: 5px 5px #333
+        background: #ffffff
+        margin: 40px auto
+        .cost
+          width: 100%
+          ul
+            li
+              border-bottom: 0
+
+.footer-container
+  .fixed-footer
+    border-bottom: 15px $yellow solid
+  .signature
+    display: flex
+    padding: 50px
+    font-family: $cairo
+    .radar,.client
+      width: 50%
+      text-align: center
+    .radar
+      position: relative
+      .sign
+        position: absolute
+        top: 0px
+        left: 50%
+        height: 120px
+  .logo-container
+    text-align: right
+    padding: 0px 20px
+    img
+      height: 100px
+  .informations
+    text-align: center
+    span
+      line-height: 40px
+      font-family: $cairo
+      font-weight: 600
+      font-size: 8px
+      color: #333
+      margin: 0px 5px
+      img
+        vertical-align: middle
+        margin-right: 5px
+
+.fixed-tools
+  position: fixed
+  top: 0px
+  right: 0px
+  background: #f1f1f1
+  padding: 10px
+  box-shadow: -5px 5px 20px 0px rgba(0,0,0,0.1)
+  border-radius: 0px 0px 0px 15px
+  a
+    display: inline-block
+    line-height: 40px
+    font-family: $cairo
+    background: #333
+    color: #FFF
+    border-radius: 5px
+    text-align: center
+    padding: 0px 10px
+    cursor: pointer
+    font-size: 12px
+    img
+      vertical-align: middle
+      margin-right: 5px
+      height: 20px
+    &.back
+      background: #f9f9f9
+
+
+
+.page
+  width: 21cm
+  min-height: 29.7cm
+  margin: 0px auto
+  padding: 0px 0px
+  page-break-after: always
+  position: relative
+  img.cover
+    width: 100%
+    height: 29.7cm
+    &.full
+      position: absolute
+      bttom: 0px
+      left: 0px
+      width: 100%
+      height: 100%
+@media print
+  html, body
+    min-height: 100%
+  .no-print, .no-print *
+    display: none !important
+  div.divFooter
+    display: none
+  tfoot
+    display: table-footer-group
+  .page
+    min-height: 100vh
+    //page-break-after: always !important
+    .printable-container
+      padding: 0px 10px
+    *
+      position: relative
+      z-index: 3
+    &.last
+      position: relative
+      padding-bottom: 300px
+      display: flex
+      flex-direction: column
+      justify-content: flex-end
+      *
+        z-index: 1
+      .fixed-footer
+        position: fixed
+        bottom: 0px
+        left: 0px
+        width: 100%
+        page-break-inside: avoid !important
+        height: 160px
+        z-index: 2
+  .signature
+    //margin-bottom: 400px
+@page
+  size: 21cm 29.7cm
+  //min-height: 29.7cm
+  margin: 0
